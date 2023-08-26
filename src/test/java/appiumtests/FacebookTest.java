@@ -62,13 +62,46 @@ public class FacebookTest {
 		MobileElement inputLastName = driver.findElement(By.xpath("//android.view.View[@content-desc=\"Surname\"]/parent::android.view.ViewGroup/following-sibling::android.widget.EditText"));
 		inputLastName.sendKeys("Alibaba");
 		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.Button[@content-desc=\"Next\"]")));
 		MobileElement btnNext = driver.findElement(By.xpath("//android.widget.Button[@content-desc=\"Next\"]"));
 		btnNext.click();
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.NumberPicker[@index='0']")));
-		driver.findElement(By.xpath("//android.widget.NumberPicker[@index='1']")).sendKeys("09"); 
-		driver.findElement(By.xpath("//android.widget.NumberPicker[@index='2']")).sendKeys("May"); 
-		driver.findElement(By.xpath("//android.widget.NumberPicker[@index='3']")).sendKeys("2015");
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.NumberPicker[@index='0']")));
+//		driver.findElement(By.xpath("//android.widget.NumberPicker[@index='1']")).sendKeys("09"); 
+//		driver.findElement(By.xpath("//android.widget.NumberPicker[@index='2']")).sendKeys("May"); 
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("android:id/button1")));
+		driver.findElement(By.xpath("//android.widget.NumberPicker[@index='2']")).sendKeys("2000");
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("android:id/button1")));
+		MobileElement btnSet = driver.findElement(By.id("android:id/button1")); 
+		btnSet.click();
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.view.View[@content-desc=\"Next\"]")));
+		MobileElement btnNext1 = driver.findElement(By.xpath("//android.view.View[@content-desc=\"Next\"]"));
+		btnNext1.click();
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.Button[@content-desc=\"Male\"]")));
+		MobileElement btnMale = driver.findElement(By.xpath("//android.widget.Button[@content-desc=\"Male\"]"));
+		btnMale.click();
+		
+		btnNext1.click();
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.EditText")));
+		MobileElement inputMobile = driver.findElement(By.xpath("//android.widget.EditText"));
+		inputMobile.sendKeys("017002233344");
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.EditText")));
+		MobileElement inputPassword = driver.findElement(By.xpath("/android.widget.EditText"));
+		inputPassword.sendKeys("12qw!@QW");
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.Button[@content-desc=\"Save\"]")));
+		MobileElement btnSave = driver.findElement(By.xpath("//android.widget.Button[@content-desc=\"Save\"]"));
+		btnSave.click();
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.Button[@content-desc=\"I Agree\"]")));
+		MobileElement btnIAgree = driver.findElement(By.xpath("//android.widget.Button[@content-desc=\"I Agree\"]"));
+		btnIAgree.click();
 		
 		System.out.println("Application Started.....");
 	}
